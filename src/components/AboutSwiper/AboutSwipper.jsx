@@ -2,16 +2,19 @@ import React, { useEffect, useState } from 'react'
 import './AboutSwipper.scss'
 import { API_URL } from '../Lib/Api';
 import { Link, useParams } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
 function AboutSwipper() {
     const [data, setdata] = useState([])
     const [btnAct, setBtnAct] = useState(1)
+    const [spinner, setSpinner] = useState(true)
     const [heart, setHeart] = useState(true)
     const [count, setCount] = useState(1)
     const {slug} = useParams()
+    
     useEffect(() => {
         fetch(`${API_URL}`)
             .then((res) => res.json())
-            .then((data) => setdata(data))  
+            .then((data) => setdata(data))
     }, [])
 
     
@@ -30,10 +33,11 @@ function AboutSwipper() {
             console.log(window.localStorage.getItem('fill'));
         }
      }
-    
-
     return (
+        <>
+        <Spinner className='spinner'/>
         <div className='about'>
+            
             <div className="about__inner container">
                 <ul className='about__list'>
                     {
@@ -146,7 +150,10 @@ function AboutSwipper() {
                     ))  
                 }
                </ul>
+                
         </div>
+        </>
+        
     )
 }
 
