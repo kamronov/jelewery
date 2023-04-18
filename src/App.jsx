@@ -2,10 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Shop from './pages/Shop/Shop';
 import Blog from './pages/Blog/Blog';
-import Home from './pages/OurStory/OurStory';
 import Header from './components/Header/Header'
 import Menu from './pages/Home/Home';
-import About from './pages/About/About';
+import About from './pages/AboutSwiper/AboutSwipper';
 import Footer from './components/Footer/Footer';
 
 function App() {

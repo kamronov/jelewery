@@ -62,7 +62,6 @@ const renge = (e)=>{
           </ul>
         </div>
 
-      {/* <Link to='/about/4'>About</Link> */}
       </div>
     </div> 
   )

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './AboutSwipper.scss'
-import { API_URL } from '../Lib/Api';
+import { API_URL } from '../../components/Lib/Api';
 import { Link, useParams } from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../../components/Spinner/Spinner';
 function AboutSwipper() {
     const [data, setdata] = useState([])
     const [btnAct, setBtnAct] = useState(1)
