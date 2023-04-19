@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Shop.scss'
 import { Link} from 'react-router-dom'
 import { API_URL } from '../../components/Lib/Api'
 function Shop() {
   const [data, setdata] = useState([])
   const [filter, setfilter] = useState([])
+  const spinnerRef = useRef()
 
   useEffect(() => {
     fetch(`${API_URL}`)
         .then((res) => res.json())
-        .then((data) => setdata(data))   
+        .then((data) => setdata(data))
+        .finally(()=>{spinnerRef.current.style.display = 'none'})  
 }, [])
 const renge = (e)=>{
-  console.log(e.target.value);
   setfilter(e.target.value)
 }
   return (
     <div className='shop'>
+              <div ref={spinnerRef} className='spinner'>
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
       <h2 className="shop__title container">Shop The Latest</h2>
       <div className="shop__inner container">
         <div className="shop__aside">

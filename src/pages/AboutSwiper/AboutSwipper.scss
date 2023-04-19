@@ -1,10 +1,15 @@
+.none {
+    display: none;
+}
 .spinner {
-    margin: 0 auto;
-    border: 1px solid #000;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    transform: translatey(-50%);
 }
 .about {
     margin-top: 70px;
-    // display: none;
     .about__list {
         display: flex;
         flex-direction: column;
@@ -41,8 +46,8 @@
     }
 
     .banner__info {
+        width: 500px;
         margin-left: 40px;
-
         h2 {
             font-size: 26px;
             line-height: 35px;
@@ -73,9 +78,12 @@
         }
 
         .btn1 {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
             .banner__btn {
                 padding: 15px;
-                font-size: 17px;
+                font-size: 16px;
                 border: none;
                 background-color: #EFEFEF;
 
@@ -96,7 +104,6 @@
             border-radius: 4px;
             padding: 16px 100px;
             background-color: #fff;
-            margin-left: 23px;
 
             &:hover {
                 background-color: rgb(0, 0, 0);

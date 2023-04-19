@@ -6,6 +6,7 @@ import Header from './components/Header/Header'
 import Menu from './pages/Home/Home';
 import About from './pages/AboutSwiper/AboutSwipper';
 import Footer from './components/Footer/Footer';
+import Cart from './pages/Cart/Cart';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/shop' element={<Shop/>}/>
       <Route path='/about/:slug' element={<About/>}/>
       <Route path='/blog' element={<Blog/>}/>
+      <Route path='/cart' element={<Cart/>}/>
     </Routes>
     <Footer/>
     </div>
